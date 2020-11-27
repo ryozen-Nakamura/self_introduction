@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pablo自己紹介ページ</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-toolbar color="#FBC02D" max-height=80>
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        <v-toolbar-title>Pablo自己紹介ページ</v-toolbar-title>
+      </v-toolbar>
+      <v-list three-line>
+        <template v-for="(item, index) in items">
+          <v-subheader v-if="item.header" :key="item.header" v-text="item.header"></v-subheader>
+          <v-divider v-else-if="item.divider" :key="index" :inset="item.inset"></v-divider>
+          <v-list-item v-else :key="item.title">
+            <v-list-item-avatar>
+              <v-img :src="item.avatar"></v-img>
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title v-html="item.title"></v-list-item-title>
+              <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+      </v-list>
+    </v-app>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script type="text/javascript" src="assets/scripts/main.js"></script>
+</body>
+
+</html>
