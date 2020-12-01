@@ -2,6 +2,9 @@ new Vue({
   el: "#app",
   vuetify: new Vuetify(),
   data: () => ({
+    drawer: false,
+    model: null,
+    tabs: ["HOME", "ABOUT US"],
     items: [
       { header: 'Pabloメンバーの自己紹介のページです．' },
       {
@@ -11,6 +14,16 @@ new Vue({
       },
       { divider: true, inset: true },
     ],
+    links: [
+      { header: 'Pabloは神戸大学のサークルです．' },
+      {
+        title: '<a href="https://kobe-pablo.github.io">ホームページ</a>',
+      },
+      { divider: true, inset: true }
+    ]
   }),
+  mounted() {
+    this.drawer = false;
+  }
 }
 )
